@@ -1,3 +1,40 @@
+# IntelliJ:
+*.ipr
+*.iws
+*.iml
+out/
+.idea/
+
+# Gradle:
+build/
+.gradle
+config/version.properties
+
+# Python / Fabric
+venv/
+*.pyc
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+project/target/*
+lib_managed/
+src_managed/
+project/
+
+# vagrant
+!Vagrantfile
+cassandra/cassandra_deploy/vagrant/*
+
+# Misc
+*.gz
+*.class
+*.log
+*.jar
+
 *.class
 
 # Mobile Tools for Java (J2ME)

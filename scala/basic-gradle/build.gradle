@@ -1,0 +1,48 @@
+def BUILD_NUMBER = project.hasProperty('BUILD_NUMBER')? "$BUILD_NUMBER":0
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+allprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: "jacoco"
+    apply plugin: 'idea'
+    apply plugin: 'project-report'
+    apply plugin: 'scala'
+
+    group = 'project-group'
+    version = "0.0.1"
+
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
+    dependencies {
+	compile 'org.scala-lang:scala-library:2.10.6'	
+    }
+}
+
+configurations.all {
+     resolutionStrategy {
+         failOnVersionConflict()
+         //force
+     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}
+
+idea {
+    project {
+        jdkName = '1.8'
+    }
+}
+
+idea.project.ipr {
+
+}
