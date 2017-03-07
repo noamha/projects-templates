@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+.idea_modules/
+project/project/
+
+project/scalikejdbc.properties
+config.properties
+
+# SBT
+target/
+
+venv
+/run
+

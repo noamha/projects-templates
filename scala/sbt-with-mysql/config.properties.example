@@ -1,0 +1,7 @@
+DatabaseSchema={schema}
+DatabaseServer={server}
+DatabasePort={port}
+DatabaseUser={user]
+DatabasePassword={password}
+DatabaseUrl=jdbc:mysql://%s:%s/%s?createDatabaseIfNotExist=true&nullCatalogMeansCurrent=true
+DatabaseDriver=com.mysql.jdbc.Driver

@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="ors (generated)" id="1485700213779-1">
+        <createTable tableName="column_family">
+            <column autoIncrement="true" name="column_family_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="keyspace_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cql_schema_def" type="VARCHAR(2000)"/>
+            <column defaultValueComputed="CURRENT_TIMESTAMP" name="last_update" type="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ors (generated)" id="1485700213779-2">
+        <addUniqueConstraint columnNames="name, keyspace_id" constraintName="UN_keyspace_id_column_name" tableName="column_family"/>
+    </changeSet>
+</databaseChangeLog>
